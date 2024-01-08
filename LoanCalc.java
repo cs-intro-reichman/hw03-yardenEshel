@@ -42,10 +42,9 @@ public class LoanCalc {
 	{
 		double end = epsilon+1;
 		double payment = 0;
-		for( payment= loan/n; payment<= loan && end >= epsilon ; payment += epsilon)
+		for( payment= loan/n; payment<= loan && endBalance(loan,rate,n,payment) ; payment += epsilon)
 		{
 			iterationCounter++;
-			end = endBalance(loan,rate,n,payment);
 		}
     	return payment;
     }
