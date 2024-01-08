@@ -76,7 +76,7 @@ public class LoanCalc {
 				H -= (H - L)/2;
 			}
 		}
-		while(end > epsilon || end < -epsilon);
+		while(H-L>epsilon);
     	return payment;
     }
 	
