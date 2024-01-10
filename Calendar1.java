@@ -8,6 +8,7 @@ public class Calendar1 {
 	static int year = 1900;
 	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
+	static int sunday = 0;
 	
 	/** 
 	 * Prints the calendars of all the years in the 20th century. Also prints the  
@@ -26,6 +27,7 @@ public class Calendar1 {
 			 dayOfMonth++;
 
 			if (year ==2000) {
+				System.out.println("During the 20th century "+sunday +" Sundays fell on the first day of the month");
 				break;
 			}
         }
@@ -43,6 +45,10 @@ public class Calendar1 {
 			System.out.println(dayOfMonth%(nDaysInMonth(month+1,year))+1+"/"+(month+1)+"/"+year);}
 		if((nDaysInMonth(month+1,year))==dayOfMonth+1)
 		 {
+			if(dayOfWeek%7 == 0)
+			{
+				sunday++;
+			}
 			 dayOfMonth = -1;
 			 month++;
 			 if (month == 12)
